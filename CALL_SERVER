@@ -1,0 +1,19 @@
+cd react-boilerplate-app
+npm install axios
+
+function testServerCall() {
+
+  // Make a request for a user with a given ID
+  axios.get('http://192.168.101.202:20010/index.php?test=abcd')
+    .then(function (response) {
+      // handle success
+      console.log(response);
+    })
+    .catch(function (error) {
+      // handle error
+      console.log(error);
+    })
+    .finally(function () {
+      // always executed
+    });
+}
