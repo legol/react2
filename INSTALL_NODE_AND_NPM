@@ -1,0 +1,20 @@
+cd ~/nodejs
+wget https://nodejs.org/dist/v12.14.0/node-v12.14.0-linux-x64.tar.xz
+tar -xJf node-v12.14.0-linux-x64.tar.xz
+
+vi ~/.bashrc
+export NODE_JS_BIN=/home/ubuntu/nodejs/node-v12.14.0-linux-x64
+alias node=$NODE_JS_BIN/bin/node
+alias npm=$NODE_JS_BIN/bin/npm
+alias npx=$NODE_JS_BIN/bin/npx
+export PATH=$PATH:$NODE_JS_BIN
+
+OR:
+
+ubuntu@ubuntu:~/nodejs/node-v12.14.0-linux-x64/bin$ sudo cp ./node /usr/bin/node
+
+------
+source ~/.bashrc
+
+node --version
+npm --version

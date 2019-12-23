@@ -1,0 +1,58 @@
+https://reactjs.org/docs/create-a-new-react-app.html#create-react-app
+
+
+npx create-react-app my-app
+cd react-boilerplate-app
+npm start
+
+Then you can access 
+http://192.168.101.202:3000/
+
+run test:
+npm test
+
+
+deploy prod:
+npm run build
+cd build
+ll
+you should see index.html is there
+
+sudo vi /etc/nginx/sites-enabled/react2
+
+server
+{
+    listen 30010;
+    server_name heaven.com;
+
+    root root /home/ubuntu/git_root/react2/react-boilerplate-app/build;
+    index index.php index.html index.htm;
+
+    location / {
+        # First attempt to serve request as file, then
+        # as directory, then fall back to displaying a 404.
+        try_files $uri $uri/ /index.html /index.php;
+    }
+
+
+#    # pass the PHP scripts to FastCGI server listening on the php-fpm socket
+#    location ~ \.php$ {
+#        try_files $uri =404;
+#        fastcgi_split_path_info ^(.+\.php)(/.+)$;
+#        # NOTE: You should have "cgi.fix_pathinfo = 0;" in php.ini
+#       
+#        fastcgi_pass 127.0.0.1:10000;
+#        fastcgi_index index.php;
+#        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+#        include fastcgi_params;
+#    }
+#
+    access_log /home/ubuntu/nginx_logs/react2.access.log main;
+    error_log /home/ubuntu/nginx_logs/react2.error.log;
+}
+
+
+sudo service nginx restart
+
+
+Then you can access http://192.168.101.202:30010/
