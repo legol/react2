@@ -2,6 +2,8 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+import TestAsyncServerCall from './TestAsyncServerCall.react'
+
 const axios = require('axios');
 
 function App() {
@@ -9,6 +11,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <TestAsyncServerCall url='http://192.168.101.202:20010/index.php?test=abcd'/>
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload. 111

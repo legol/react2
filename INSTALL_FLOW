@@ -1,0 +1,22 @@
+use npm to install flow-bin:
+ubuntu@ubuntu:~/git_root/react2/react-boilerplate-app$ npm install --save-dev flow-bin  
+  
+Add this line into package.json:
+  "scripts": {
+    ...
+    "flow": "flow"
+  },
+
+  npm run flow init
+
+  npm run flow
+
+  If all these are fine, add this line into ~/.bashrc
+
+  alias flow='npm run flow'
+  
+
+  Add this line to the beginning of the file:
+  // @flow
+
+  install flow-for-vscode extension
