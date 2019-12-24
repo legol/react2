@@ -1,0 +1,10 @@
+{
+  "folders": [
+    {
+      "path": "/home/ubuntu/git_root/react2"
+    }
+  ],
+  "settings": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
+}
